@@ -1,0 +1,58 @@
+{% extends 'Ask_Gel0/base.html' %}
+
+{% block content %}
+	<div class="row content shadow p-3 mb-3 rounded">
+		<div class="col-2 border-right">
+		    <img src="static 'images/avatar.jpeg" width="70" height="70" alt="avatar" class="avatar">
+		    <div class="col justify-content-center">
+		      <select name="likes" id="" class='likes'>
+		        <option selected>5</option>
+		        <option>4</option>
+		        <option>3</option>
+		        <option>2</option>
+		        <option>1</option>
+		      </select>
+		    </div>
+		</div>
+		<div class="col-10">
+		    <a href="{% url 'post_detail' pk=post.pk %}"><h3> {{ post.title }}</h3></a>
+		    {{ post.text }}
+		    <hr>
+		    <a href="">answer</a> Tags <a href="">black-jack</a> <a href="shluhi"></a>
+	    </div>
+	</div>
+	<hr>
+	<div class="row content shadow p-3 mb-3 rounded">
+		<div class="col-2 border-right">
+		    <img src="static 'images/avatar.jpeg" width="70" height="70" alt="avatar" class="avatar">
+		    <div class="col justify-content-center">
+		      <select name="likes" id="" class='likes'>
+		        <option selected>5</option>
+		        <option>4</option>
+		        <option>3</option>
+		        <option>2</option>
+		        <option>1</option>
+		      </select>
+		    </div>
+		</div>
+
+			<div class="col-10">
+			    <p>Answer_here</p>
+			    <hr>
+				<div class="form-group form-check">
+				    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+				    <label class="form-check-label" for="exampleCheck1">Correct</label>
+			  </div>
+		    </div>	
+	</div>
+	<hr>
+	<div class="row content shadow p-3 mb-3 rounded">
+		<div class="col">
+			<div class="form-group">
+            <label>Enter your answer here</label><br>
+            <textarea  id='Text' class='form-control'rows="5" maxlength="300" placeholder="Answer"></textarea> 
+        </div>
+        <button type="submit" class="btn btn-primary">Answer</button>
+		</div>	
+	</div>
+{% endblock %}

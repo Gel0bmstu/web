@@ -1,0 +1,27 @@
+{% extends 'Ask_Gel0/base.html' %}
+
+{% block content %}
+    <div class="content shadow p-3 mb-3 rounded">
+      <h2>New question</h2>
+      <hr>
+      <form method="POST" class="post-form  ">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+      </form>
+      <form>
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" placeholder="Enter title">
+        </div>
+        <div class="form-group">
+          <label>Text</label>
+          <textarea  id='Text' class='form-control'rows="10" maxlength="300" placeholder="Really, how? Have no idea about it"></textarea> 
+        </div>
+        <div class="form-group">
+          <label>Tags</label>s
+          <input type="text" class="form-control" placeholder="htm, css, django">
+        </div>
+        <button type="submit" class="btn btn-primary">Ask</button>
+      </form>
+    </div>
+{% endblock %}

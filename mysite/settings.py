@@ -25,7 +25,6 @@ SECRET_KEY = '9*l#q8aw0k(@i05^f4$!2(ikky+280)#7hu4u^7_u_&(_!faj8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['127.0.0.1', 'gel0.pythonanywhere.com']
 
 

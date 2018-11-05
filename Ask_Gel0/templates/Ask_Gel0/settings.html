@@ -1,0 +1,34 @@
+{% extends 'Ask_Gel0/base.html' %}
+
+{% block content %}
+	<div class="row content shadow p-3 mb-3 rounded">
+		<div class="col">
+			<h2>Settings: {{ post.author }}</h2>
+			<hr>
+			<form>
+			    <div class="form-group">
+			      <label>Login</label>
+			      <input type="text" class="form-control" placeholder="Login">
+			    </div>
+			    <div class="form-group">
+			      <label>Email</label>
+			      <input type="" class="form-control" placeholder="example@mail.ru">
+			    </div>
+			    <div class="form-group">
+			      <label>Nickname</label>
+			      <input type="text" class="form-control" placeholder="Nickname">
+			    </div>
+				<div class="row">
+					<div class="col-3">
+						<label for="exampleFormControlFile1">Upload avatar</label>
+					</div>
+					<div class="col-9">
+						<img src="static 'images/avatar.jpeg" width="100" height="100" alt="avatar" class="avatar">
+				  		<input type="file" class="form-control-file" id="exampleFormControlFile1">
+					</div>
+				</div>			    
+			    <button type="submit" class="btn btn-primary">Save!</button>
+	      </form>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'Ask_Gel0/base.html' %}
+
+
+{% block tags %}
+	{% for tag in tags %}
+    	<a href="">{{ tag.tag_name }}</a>
+    {% endfor %}
+{% endblock %}

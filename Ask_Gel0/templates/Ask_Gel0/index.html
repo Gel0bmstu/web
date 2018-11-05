@@ -1,0 +1,74 @@
+{% extends 'Ask_Gel0/base.html' %}
+
+{% block content %}
+    <div class="row content shadow p-3 mb-3 rounded">
+      <div class="col border-right" align="center">
+        <a href="{% url 'ask' %}"><h2>New question</h2></a>               
+      </div>
+      <div class="col border-left" align="center">
+        <a href="{% url 'post_hot' %}"><h2>Hot questions</h2></a>                 
+      </div>             
+    </div>
+	{% for post in posts %}
+		<div class="row content shadow p-3 mb-3 rounded">
+		  <div class="col-2 border-right">
+		    <img src="" width="70" height="70" alt="avatar" class="avatar">
+		    <div class="col justify-content-center">
+		      <select name="likes" id="" class='likes'>
+		        <option selected>5</option>
+		        <option>4</option>S
+		        <option>3</option>
+		        <option>2</option>
+		        <option>1</option>
+		      </select>
+		    </div>
+		  
+		  </div>
+		  <div class="col-10">
+		    <a href="{% url 'post_detail' pk=post.pk %}"><h3> {{ post.title }}</h3></a>
+		    {{ post.text }}
+		    <hr>
+		    <a href="">answer</a> Tags {% for tag in tags %} {{ tag.tag_name }} {% endfor %} <a href=""></a>
+		  </div>
+		</div>
+	{% endfor %}
+
+	<nav aria-label="">
+		<ul class="pagination justify-content-center">
+<!-- 			<li class="page-item disabled">
+				<span class="page-link">Previous</span>
+			</li>
+ -->
+			{% for n in posts.paginator.page_range %}
+			
+			{% if posts.number == n %}
+			<li class="page-item active">
+				<span class="page-link" href="?page={{ n }}">{{ n }}<span class="sr-only">(current)</span></span>
+			</li>
+
+			{% else %}
+				<li class="page-item">
+					<a class="page-link" href="?page={{ n }}">{{ n }}</a>
+				</li>
+			{% endif %}
+			{% endfor %}
+<!-- 
+			<li class="page-item">
+				<a class="page-link" href="#">Next</a>
+			</li> -->
+		</ul>
+	</nav>
+
+<!--     <div class="row">
+      <div class="col">
+        <div class="btn-toolbar down-board" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group mr-2" role="group" aria-label="First group" >
+            <button type="button" class="btn btn-secondary">1</button>
+            <button type="button" class="btn btn-secondary">2</button>
+            <button type="button" class="btn btn-secondary">3</button>
+            <button type="button" class="btn btn-secondary">>></button>
+          </div>
+        </div>              
+      </div>
+    </div> -->
+{% endblock %}

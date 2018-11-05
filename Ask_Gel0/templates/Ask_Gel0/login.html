@@ -1,0 +1,23 @@
+{% extends 'Ask_Gel0/base.html' %}
+
+{% block content %}
+	<div class="row content shadow p-3 mb-3 rounded">
+		<div class="col">
+			<h2>Log In</h2>
+			<hr>
+			<form>
+			    <div class="form-group">
+			      <label>Login</label>
+			      <input type="text" class="form-control" placeholder="Enter title">
+			    </div>
+			    <div class="form-group">
+			      <label>Password</label>
+			      <input type="text" class="form-control" placeholder="Enter title">
+			    </div>
+			    <button type="submit" class="btn btn-primary">Log In!</button>
+	      </form>
+	      <br>
+	      <p>Don't have account? <a href="{% url 'signup' %}">Sign In!</a></p>
+		</div>
+	</div>
+{% endblock %}

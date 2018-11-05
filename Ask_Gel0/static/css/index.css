@@ -1,0 +1,56 @@
+.navbar-brand
+{
+	font: courier;
+}
+
+H5 
+{
+	color: white;
+}
+
+body
+{
+	background-color: #F4F6F7;
+}
+
+.main 
+{
+	margin: 5px 20% 0 20%;
+}
+
+.row
+{
+	# border: solid;
+}
+
+.content
+{
+	background-color: #E5E7E9;
+	margin: 5px 0 5px 0;
+}
+
+.avatar
+{
+	margin: 5px;
+}
+
+.down-board
+{
+	margin: 5px 0 5px 0;
+	align-items: center;
+	justify-content: center;
+}
+
+.text
+{
+	width: 500px;
+	height: 200px;
+}
+
+
+footer
+{
+	margin: 5px 0 0 0;
+	background-color: #2C3E50;	
+}
+
