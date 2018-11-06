@@ -14,8 +14,8 @@ class PostManager(models.Manager):
 		return self.order_by('-likes')
 
 	# Список по тегу 
-	def post_tag(slef, tag):
-		return self.filter(tags=tag)
+	def post_tag(slef):
+		return self.filter('-tags')
 
 	# Страница вопроса
 	# def get_question(self, pk)
@@ -30,6 +30,8 @@ class Post(models.Model):
     likes = models.IntegerField(default=0)
     created_date = models.DateTimeField(default=timezone.now)
 
+    answers = models.ManyToManyField('Answer', related_name='post_answers')
+
     objects = PostManager()
 
     def publish(self):
@@ -41,8 +43,14 @@ class Post(models.Model):
 
 # Модель тега
 class Tag(models.Model):
-	tag_name = models.CharField(max_length=15)
+    tag_name = models.CharField(max_length=15)
+
+    def name(self):
+    	return self.tag_name
 	# slug = models.SlugField(max_length=50, unique=True, blank=True)
+
+	# def __str__(self):
+ #        return self.tag_name
 
 # Модель ответа
 class Answer(models.Model):

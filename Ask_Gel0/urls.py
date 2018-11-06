@@ -3,7 +3,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
-    url(r'^$', views.tag_list, name='tag_list'),
     url(r'^question/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
     url(r'^ask/$', views.post_new, name='ask'),
     url(r'^hot/$', views.post_hot, name	='post_hot'),

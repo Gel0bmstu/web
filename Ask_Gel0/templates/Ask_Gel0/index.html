@@ -1,5 +1,7 @@
 {% extends 'Ask_Gel0/base.html' %}
 
+{% load static %}
+
 {% block content %}
     <div class="row content shadow p-3 mb-3 rounded">
       <div class="col border-right" align="center">
@@ -12,23 +14,17 @@
 	{% for post in posts %}
 		<div class="row content shadow p-3 mb-3 rounded">
 		  <div class="col-2 border-right">
-		    <img src="" width="70" height="70" alt="avatar" class="avatar">
-		    <div class="col justify-content-center">
-		      <select name="likes" id="" class='likes'>
-		        <option selected>5</option>
-		        <option>4</option>S
-		        <option>3</option>
-		        <option>2</option>
-		        <option>1</option>
-		      </select>
-		    </div>
-		  
+		    <img src="{%static 'images/avatar.jpeg'%}" width="90" height="90" alt="avatar" class="img-circle foto">
+		    <button type="button" class="btn btn-secondary">+</button>	
+		    <button type="button" class="btn btn-secondary">-</button>	
+		  <p>Likes: {{ post.likes }}</p>
 		  </div>
 		  <div class="col-10">
 		    <a href="{% url 'post_detail' pk=post.pk %}"><h3> {{ post.title }}</h3></a>
 		    {{ post.text }}
 		    <hr>
-		    <a href="">answer</a> Tags {% for tag in tags %} {{ tag.tag_name }} {% endfor %} <a href=""></a>
+		    Answers: <a href="{% url 'post_detail' pk=post.pk %}">answer(3)</a> 
+		    Tags:  {% for tags in posts %} {{ tag.tag_name }} {% endfor %} <a href=""></a>
 		  </div>
 		</div>
 	{% endfor %}
@@ -41,16 +37,16 @@
  -->
 			{% for n in posts.paginator.page_range %}
 			
-			{% if posts.number == n %}
-			<li class="page-item active">
-				<span class="page-link" href="?page={{ n }}">{{ n }}<span class="sr-only">(current)</span></span>
-			</li>
-
-			{% else %}
-				<li class="page-item">
-					<a class="page-link" href="?page={{ n }}">{{ n }}</a>
+				{% if posts.number == n %}
+				<li class="page-item active">
+					<span class="page-link" href="?page={{ n }}">{{ n }}<span class="sr-only">(current)</span></span>
 				</li>
-			{% endif %}
+
+				{% else %}
+					<li class="page-item">
+						<a class="page-link" href="?page={{ n }}">{{ n }}</a>
+					</li>
+				{% endif %}
 			{% endfor %}
 <!-- 
 			<li class="page-item">
